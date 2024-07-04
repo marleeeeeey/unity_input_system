@@ -2715,6 +2715,7 @@ GameObject:
   - component: {fileID: 1705438540}
   - component: {fileID: 1705438539}
   - component: {fileID: 1705438542}
+  - component: {fileID: 1705438543}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2883,14 +2884,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1705438536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d260f45b26633241bd422484d7d9090, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b223ebb3d4736d4ba687485ab726d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionAsset: {fileID: -944628639613478452, guid: b1fb4016896b1c4479f79f1dc0aa26a6, type: 3}
   valueX: 0
   valueY: 0
   tryToAttack: 0
   tryToJump: 0
+--- !u!114 &1705438543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705438536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11d46f54e5f6fc4984d2561c0011f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 1705438542}
+  moveSpeed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
