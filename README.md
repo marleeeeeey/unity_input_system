@@ -42,7 +42,8 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 
 ## Unity Guidelines from the Course
 
-- #TODO
+- Use `OnEnable`, `OnDisable` and `OnDestroy` to enable and disable the input actions.
+  - It may be useful to implement menus and pause the game.
 
 ## Unity Recipes from the Course
 
@@ -189,3 +190,75 @@ public class EmbeddedActions : MonoBehaviour
 ![Using control schemes](screenshots/README_image-4.png)
 
 - `Control Scheme` is useful when you will be implement the reseting of the bindings.
+
+### Workflow 3: Using an Actions Asset Via Inspector Reference
+
+- `[SerializeField] InputActionAsset inputActions;`
+- Drag and drop the `PlayerControls` asset to the `inputActions` field.
+
+```csharp
+
+    [SerializeField] InputActionAsset actionAsset;
+
+    InputAction jumpAction;
+    InputAction moveAction;
+    InputAction attackAction;
+    InputActionMap playerNormalMap;
+
+    private void Awake()
+    {
+        playerNormalMap = actionAsset.FindActionMap("PlayerNormal");
+        jumpAction = playerNormalMap.FindAction("Jump");
+        moveAction = playerNormalMap.FindAction("MoveHorizontal");
+        attackAction = playerNormalMap.FindAction("Attack");
+    }
+
+```
+
+- Use `OnEnable`, `OnDisable` and `OnDestroy` to enable and disable the input actions.
+  - It may be useful to implement menus and pause the game.
+- You may `Enable/Disable` whole `Asset`, `Action Map` or `Action`.
+
+```csharp
+
+    private void OnEnable()
+    {
+        actionAsset.Enable(); // Enable the entire asset
+        // playerNormalMap.Enable(); // Enable individual maps
+        // jumpAction.Enable(); // Enable individual actions
+    }
+
+```
+
+- Use `moveAction.ReadValue<float>();` to read one demensional value.
+- Use `moveAction.ReadValue<Vector2>();` to read two demensional value.
+- Use `context.ReadValueAsButton();` to read the value as a button (bool) in callbacks.
+
+```csharp
+
+    private void OnEnable()
+    {
+        jumpAction.performed += JumpExample;
+        actionAsset.Enable();
+    }
+
+    private void OnDisable()
+    {
+        actionAsset.Disable();
+        jumpAction.performed -= JumpExample;
+    }
+
+    private void JumpExample(InputAction.CallbackContext context)
+    {
+        Debug.Log("Jumping");
+        // tryToJump = context.ReadValueAsButton();
+        tryToJump = true;
+    }
+
+    private void JumpStopExample(InputAction.CallbackContext context)
+    {
+        Debug.Log("Jumping Stopped");
+        tryToJump = false;
+    }
+
+```
