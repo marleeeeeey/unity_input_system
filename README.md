@@ -40,6 +40,7 @@
 
 ## Unity Recipes from the Course
 
-### Recipe 1
+### Import the Input System
 
-#TODO
+- `Window -> Package Manager -> Input System -> Install`.
+- `Edit -> Project Settings -> Player -> Other Settings -> Active Input Handling -> Input System Package (New) or Both`.
