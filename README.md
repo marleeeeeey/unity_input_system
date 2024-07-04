@@ -16,7 +16,13 @@
 
 ### What we will learn in this course
 
-- #TODO
+https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.html
+
+- Learn how to use the new Unity Input System workflows:
+  - Directly Reading Device States.
+  - Using Embedded Actions.
+  - Using an Actions Asset.
+  - Using an Actions Asset and a PlayerInput component.
 
 ## My goals
 
@@ -44,3 +50,12 @@
 
 - `Window -> Package Manager -> Input System -> Install`.
 - `Edit -> Project Settings -> Player -> Other Settings -> Active Input Handling -> Input System Package (New) or Both`.
+
+### Workflow 1: Directly Reading Device States
+
+- https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-Direct.html
+- Include `using UnityEngine.InputSystem;`.
+- Use `Keyboard`, `Gamepad`, `Mouse` or `Touchscreen` classes.
+- Use `Keyboard.current.wKey.isPressed` to check if the key is pressed.
+- Use `Keyboard.current.wKey.wasPressedThisFrame` to check if the key was pressed this frame.
+- Use `Keyboard.current.wKey.wasReleasedThisFrame` to check if the key was released this frame.
