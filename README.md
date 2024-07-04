@@ -135,3 +135,57 @@ public class EmbeddedActions : MonoBehaviour
 }
 
 ```
+
+### Workflow 3: Using an Actions Asset
+
+**Theory**
+
+- https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-ActionsAsset.html
+- Allows you to keep the data that defines your actions separate from the GameObjects.
+- All your action definitions are stored as a single asset file.
+- Ability to group actions into Action Maps and Control Schemes.
+- Input Actions Asset window separate to four parts:
+  - `Control Scheme` - a collection of action maps.
+    - You might have one control scheme which is "Joypad", and
+    - another control scheme which is "Keyboard and Mouse".
+    - used to adapt the in-game UI to show the correct keys or buttons in on-screen prompts.
+  - `Action Map` - a collection of actions.
+    - each map relates to a different situation:
+      - driving vehicles and
+      - navigating on foot, and
+      - may have in-game menus.
+  - `Action` - a single action.
+  - `Binding` - a single binding.
+- There are **two distinct ways to access it from your code**. You can either:
+  - Use an **inspector reference** to the Actions Asset.
+    - You must read the actions by name using strings.
+  - **Generate a C# class** that wraps your Actions Asset.
+    - Unity generates an accompanying class as a new .cs script asset
+
+**Practice**
+
+- `Project -> Create -> Input Actions` to create an actions asset.
+  - Call it `PlayerControls`.
+  - Double click on it to open the asset.
+
+![Example of Input Actions Asset](screenshots/README_image.png)
+
+- `Action Types` may be `Value`, `Button` or `Pass-Through`.
+- `Control Type` may have a lot of options. Uses to filter the input.
+  - Choose `Any` to accept any input. Then all types of bindings will be available:
+
+![all types of bindings](screenshots/README_image-1.png)
+
+- Moslty you may use `All Binding` to accept all types of bindings.
+
+- Example of Positive/Negative Binding:
+
+![Example of Positive/Negative Binding](screenshots/README_image-2.png)
+
+- Adding control scheme and setup the requirements:
+
+![Adding control scheme](screenshots/README_image-3.png)
+
+![Using control schemes](screenshots/README_image-4.png)
+
+- `Control Scheme` is useful when you will be implement the reseting of the bindings.
