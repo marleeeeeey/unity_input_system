@@ -274,7 +274,7 @@
             "id": "d7da81bf-e72a-409e-b9fc-c9c387b914ef",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Exit",
                     "type": "Button",
                     "id": "e0bdaadc-6af6-4a2b-9e43-7836fed831bf",
                     "expectedControlType": "Button",
@@ -283,19 +283,7 @@
                     "initialStateCheck": false
                 }
             ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "1865d136-016a-4b2f-8e04-33391329e0fb",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
+            "bindings": []
         }
     ],
     "controlSchemes": [

@@ -239,6 +239,7 @@ public class EmbeddedActions : MonoBehaviour
     private void OnEnable()
     {
         jumpAction.performed += JumpExample;
+        jumpAction.canceled -= JumpStopExample;
         actionAsset.Enable();
     }
 
@@ -246,6 +247,59 @@ public class EmbeddedActions : MonoBehaviour
     {
         actionAsset.Disable();
         jumpAction.performed -= JumpExample;
+        jumpAction.canceled -= JumpStopExample;
+    }
+
+    private void JumpExample(InputAction.CallbackContext context)
+    {
+        Debug.Log("Jumping");
+        // tryToJump = context.ReadValueAsButton();
+        tryToJump = true;
+    }
+
+    private void JumpStopExample(InputAction.CallbackContext context)
+    {
+        Debug.Log("Jumping Stopped");
+        tryToJump = false;
+    }
+
+```
+
+### Workflow 3: Using an Actions Asset Via Generated C# Class
+
+- `Project -> Create -> Input Actions` to create an actions asset and named `PlayerControls`.
+- Select the `PlayerControls` asset and click on the `Generate C# Class` button in the inspector.
+- Use this class in the code.
+
+```csharp
+
+    PlayerControls controls; // Generated class from the input system
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        controls.PlayerNormal.Jump.performed += JumpExample;
+        controls.PlayerNormal.Jump.canceled += JumpStopExample;
+
+        controls.PlayerNormal.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.PlayerNormal.Disable();
+
+        controls.PlayerNormal.Jump.performed -= JumpExample;
+        controls.PlayerNormal.Jump.canceled -= JumpStopExample;
+    }
+
+    private void Update()
+    {
+        valueX = controls.PlayerNormal.MoveHorizontal.ReadValue<float>();
+        Debug.Log("Value X: " + valueX);
     }
 
     private void JumpExample(InputAction.CallbackContext context)
