@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class GatherInput2 : MonoBehaviour
 {
-    PlayerControls controls; // Generated class from the input system
+    GameActions controls; // Generated class from the input system
 
     public float valueX;
     public float valueY;
@@ -15,7 +15,7 @@ public class GatherInput2 : MonoBehaviour
 
     private void Awake()
     {
-        controls = new PlayerControls();
+        controls = new GameActions();
     }
 
     private void OnEnable()
@@ -47,7 +47,6 @@ public class GatherInput2 : MonoBehaviour
     private void JumpExample(InputAction.CallbackContext context)
     {
         Debug.Log("Jumping");
-        // tryToJump = context.ReadValueAsButton();
         tryToJump = true;
     }
 
