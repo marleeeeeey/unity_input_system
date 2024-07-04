@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    [SerializeField] GatherInput2 input;
-
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
+
+    [Header("Jump")]
+    [SerializeField] float jumpForce = 10f;
+
+    GatherInput2 input;
     Rigidbody2D rb;
 
     bool facingRight = true;
@@ -15,6 +18,7 @@ public class PlayerControls : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        input = GetComponent<GatherInput2>();
     }
 
     private void Update()
@@ -26,6 +30,7 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Jump();
     }
 
     private void Move()
@@ -41,6 +46,15 @@ public class PlayerControls : MonoBehaviour
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+    }
+
+    public void Jump()
+    {
+        if (input.tryToJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x * moveSpeed, jumpForce);
+            input.tryToJump = false;
         }
     }
 }
