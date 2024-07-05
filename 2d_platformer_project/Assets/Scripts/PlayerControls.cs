@@ -19,6 +19,7 @@ public class PlayerControls : MonoBehaviour
 
     GatherInput2 input;
     Rigidbody2D rb;
+    Animator anim;
 
     bool facingRight = true;
 
@@ -26,11 +27,13 @@ public class PlayerControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<GatherInput2>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         Flip();
+        SetAnimationValues();
     }
 
     // Frame-rate independent updates
@@ -77,5 +80,10 @@ public class PlayerControls : MonoBehaviour
             grounded = true;
         else
             grounded = false;
+    }
+
+    void SetAnimationValues()
+    {
+        anim.SetFloat("AbsSpeedX", Mathf.Abs(rb.velocity.x));
     }
 }

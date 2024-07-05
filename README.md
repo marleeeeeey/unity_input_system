@@ -328,3 +328,9 @@ if (hit)
     Debug.Log("Grounded");
 }
 ```
+
+### Basic Animations
+
+- Select the object in the hierarchy.
+- Open the `Animation` window.
+- Click `Play` to start the animation.
