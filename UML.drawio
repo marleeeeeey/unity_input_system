@@ -1,23 +1,11 @@
-<mxfile host="Electron" modified="2024-07-05T08:09:44.862Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="shDg2UXrpAaxIy5Seweg" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2024-07-05T11:19:23.888Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="hIbjvyny-6sqBr_acb4u" version="21.1.2" type="device">
   <diagram name="Page-1" id="W0r8VTpRrAbCd9TFT7GV">
-    <mxGraphModel dx="1781" dy="167" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1944" dy="261" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="xtK6tUM-NP-llqa6Qkgk-1" value="Embedded Actions" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-416" y="621" width="191" height="52" as="geometry" />
-        </mxCell>
-        <mxCell id="xtK6tUM-NP-llqa6Qkgk-4" value="Reading device states from code" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xtK6tUM-NP-llqa6Qkgk-1">
-          <mxGeometry y="26" width="191" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="xtK6tUM-NP-llqa6Qkgk-5" value="Embedded Actions" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-205" y="621" width="191" height="52" as="geometry" />
-        </mxCell>
-        <mxCell id="xtK6tUM-NP-llqa6Qkgk-6" value="Reading device states from code" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xtK6tUM-NP-llqa6Qkgk-5">
-          <mxGeometry y="26" width="191" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="xtK6tUM-NP-llqa6Qkgk-7" value="GameActions.inputactions" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="-403" y="746" width="245" height="78" as="geometry" />
+          <mxGeometry x="-667" y="734.5" width="245" height="78" as="geometry" />
         </mxCell>
         <mxCell id="xtK6tUM-NP-llqa6Qkgk-9" value="Setup via UI (Input Actions Plugin)" style="text;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xtK6tUM-NP-llqa6Qkgk-7">
           <mxGeometry y="26" width="245" height="26" as="geometry" />
@@ -53,8 +41,10 @@
         <mxCell id="xtK6tUM-NP-llqa6Qkgk-17" value="&lt;b&gt;AttackControls&amp;nbsp;&lt;/b&gt;(Script)&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="xtK6tUM-NP-llqa6Qkgk-10">
           <mxGeometry y="223" width="245" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="xtK6tUM-NP-llqa6Qkgk-12" value="use" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="xtK6tUM-NP-llqa6Qkgk-11" target="xtK6tUM-NP-llqa6Qkgk-7">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="xtK6tUM-NP-llqa6Qkgk-12" value="use&lt;br&gt;controls.PlayerNormal.MoveHorizontal.ReadValue&amp;lt;float&amp;gt;()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="xtK6tUM-NP-llqa6Qkgk-11" target="xtK6tUM-NP-llqa6Qkgk-7">
+          <mxGeometry x="0.0094" y="-17" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

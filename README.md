@@ -393,3 +393,18 @@ if (hit)
 ### Workflow 4: Using an Actions Asset and a PlayerInput component
 
 ![Workflow 4](screenshots/README_image-11.png)
+
+- provides the flexibility of being able to connect any action to any public method on a GameObject’s component without writing code.
+
+**Practice**
+
+- Create `InputActions` asset. Call it `Controls`.
+- Add `2D Vector Composite Binding` to the `Move` action.
+  - `Didital Normalized` is used to normalize the input from keyboard for 2D Vector.
+- `Add Bindings` for the gamepad `Move` action.
+  - Add `Deadzone` to the gamepad `Move` action.
+  - Add `2D Normalized` to the gamepad `Move` action.
+- `Add Control Scheme` and setup the requirements.
+  - Add `Keyboard and Mouse` and `Gamepad` control schemes.
+- Add `Player Input` component to the player game object.
+  - Assign the `Controls` asset to the `Actions` field.
