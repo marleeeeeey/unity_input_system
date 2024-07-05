@@ -408,3 +408,22 @@ if (hit)
   - Add `Keyboard and Mouse` and `Gamepad` control schemes.
 - Add `Player Input` component to the player game object.
   - Assign the `Controls` asset to the `Actions` field.
+
+#### `Send Message` behavior
+
+- Create callback methods names mirroring the action names in the `Controls` asset.
+  - `OnMove` for the `Move` action.
+  - `OnJump` for the `Jump` action.
+
+![Send Message](screenshots/README_image-15.png)
+
+```csharp
+
+using UnityEngine.InputSystem;
+
+    void OnMove(InputValue value)
+    {
+        Debug.Log("OnMove: " + value.Get<Vector2>());
+    }
+
+```
