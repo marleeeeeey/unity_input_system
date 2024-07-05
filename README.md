@@ -346,3 +346,11 @@ if (hit)
 ![Blend Tree](screenshots/README_image-5.png)
 
 ![Animator Example](screenshots/README_image-6.png)
+
+- For `Attack Animation` make sense to disable `Can Transition to Self` in the `Animator`.
+
+### Call method at the end of the animation
+
+![Call method at the end of the animation](screenshots/README_image-7.png)
+
+![Set the callback method](screenshots/README_image-8.png)
