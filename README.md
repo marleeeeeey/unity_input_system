@@ -427,3 +427,7 @@ using UnityEngine.InputSystem;
     }
 
 ```
+
+#### `Broadcast Message` behavior
+
+- broadcast message will call the passed in function for all the scripts on the game object that have that function and **for all children objects** that also have that function.
