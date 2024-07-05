@@ -354,3 +354,18 @@ if (hit)
 ![Call method at the end of the animation](screenshots/README_image-7.png)
 
 ![Set the callback method](screenshots/README_image-8.png)
+
+### Interactions and Processors
+
+- `Interactions` are used to filter the input.
+  - `Hold` - is used to check if the button is held some time. Action starts when the time is reached.
+  - `Tap` - is used to check if the button is tapped (pressed and released quickly).
+  - `Multi-Tap` - is used to check if the button is tapped multiple times.
+
+![Interactions](screenshots/README_image-9.png)
+
+- `Processors` are used to modify the input.
+  - Order is important. Processors are executed from the top to the bottom.
+  - `Processors` list is dependent on the `Control Type`.
+
+![Processors](screenshots/README_image-10.png)
