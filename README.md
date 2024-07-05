@@ -61,6 +61,7 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 - Use `Keyboard.current.wKey.isPressed` to check if the key is pressed.
 - Use `Keyboard.current.wKey.wasPressedThisFrame` to check if the key was pressed this frame.
 - Use `Keyboard.current.wKey.wasReleasedThisFrame` to check if the key was released this frame.
+- Use `Keyboard.current.wKey.wasPerformedThisFrame` to check if the key was performed this frame. All `interactions` are completed.
 
 - `Edit -> Project Settings -> Input System Package -> Create Settings Asset` to create an input settings asset.
 
@@ -68,9 +69,9 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 
 - https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-Embedded.html
 - provides you with the flexibility to modify or add multiple bindings without needing to change your code.
-  - `CallbackContext.performed` - is called when the action is performed.
+  - `CallbackContext.started` - is called when the action is starte - when the button is pressed.
+  - `CallbackContext.performed` - is called when the action is performed - all `interactions` are completed.
   - `CallbackContext.canceled` - is called when the action is canceled.
-  - `CallbackContext.started` - is called when the action is started.
 - To read `Vector2` values
   - In Inspector, add a new binding to the action called `Add Up/Down/Left/Right Composite Binding`.
   - In the code, use `context.ReadValue<Vector2>()` to read the value.
@@ -369,3 +370,16 @@ if (hit)
   - `Processors` list is dependent on the `Control Type`.
 
 ![Processors](screenshots/README_image-10.png)
+
+### Started vs Performed
+
+- `Started` is called when the action is started.
+- `Performed` is called when all `interactions` are completed.
+
+### Actions with Modifiers
+
+- Use `Add Binding With One/Two Modifiers` to add the modifiers.
+- `Edit -> Project Settings -> Input System Package -> Enable Input Consumption` to
+  - Buttons with modifiers will have more priority then buttons without modifiers.
+  - Prevent sumultaneous actions like `Shift + W` and `W`.
+  - Be careful with this option.
