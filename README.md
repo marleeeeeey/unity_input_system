@@ -498,3 +498,9 @@ using UnityEngine.InputSystem;
     }
 
 ```
+
+### Move animation
+
+![Base Layer Animation](screenshots/README_image-18.png)
+
+![Idle Blend Tree](screenshots/README_image-17.png)

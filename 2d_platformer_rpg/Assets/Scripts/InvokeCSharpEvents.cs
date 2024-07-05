@@ -7,26 +7,48 @@ using UnityEngine.InputSystem;
 public class InvokeCSharpEvents : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
-    Rigidbody2D rb;
-    Vector2 direction;
 
+    // Components
+    Rigidbody2D rb;
     PlayerInput playerInput;
+    Animator animator;
+
+    // Input
     InputActionMap playerBasicInputMap;
     InputAction attackAction;
     InputAction moveAction;
 
+    // States
+    Vector2 direction;
+
     private void Awake()
     {
+        // Components
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
+
+        // Input
         playerBasicInputMap = playerInput.actions.FindActionMap("PlayerBasic");
         attackAction = playerBasicInputMap.FindAction("Attack");
         moveAction = playerBasicInputMap.FindAction("Move");
+        animator.SetFloat("ValueY", -1); // Make the player face down by default
     }
 
     private void Update()
     {
         direction = moveAction.ReadValue<Vector2>();
+
+        if (direction != Vector2.zero)
+        {
+            animator.SetFloat("ValueX", direction.x);
+            animator.SetFloat("ValueY", direction.y);
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
     }
 
     private void FixedUpdate()
