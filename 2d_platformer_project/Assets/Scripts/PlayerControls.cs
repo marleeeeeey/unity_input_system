@@ -84,6 +84,8 @@ public class PlayerControls : MonoBehaviour
 
     void SetAnimationValues()
     {
+        anim.SetBool("Grounded", grounded);
+        anim.SetFloat("SpeedY", rb.velocity.y);
         anim.SetFloat("AbsSpeedX", Mathf.Abs(rb.velocity.x));
     }
 }

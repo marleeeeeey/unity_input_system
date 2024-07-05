@@ -334,3 +334,15 @@ if (hit)
 - Select the object in the hierarchy.
 - Open the `Animation` window.
 - Click `Play` to start the animation.
+
+### Blend Tree and Jump Animation
+
+- Remove `JumpUp` and `JumpDown` animations from the `Animator`.
+- Create a new `Blend Tree` and add `JumpUp` and `JumpDown` animations. Name it `JumpBlendTree`.
+- Double click on the `JumpBlendTree` to open it.
+- Select parameters `SpeedY` in `JumpBlendTree -> Parameters`.
+- Add `JumpUp` and `JumpDown` animations into `JumpBlendTree -> Motion`.
+
+![Blend Tree](screenshots/README_image-5.png)
+
+![Animator Example](screenshots/README_image-6.png)
