@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 2145682660649007259}
   - component: {fileID: 6780409917087508627}
   - component: {fileID: 8877792090732416224}
+  - component: {fileID: 8200266430502506949}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -254,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 1771f970ea0362e4685cc9f03cda7703, type: 3}
-  m_NotificationBehavior: 1
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -267,13 +268,41 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8200266430502506949}
+        m_TargetAssemblyTypeName: InputInvokeUnityEvents, Assembly-CSharp
+        m_MethodName: MoveExample
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 19004700-3512-4bf3-9712-bb65bb7a6297
     m_ActionName: PlayerBasic/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualSenseGamepadHID/leftStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8200266430502506949}
+        m_TargetAssemblyTypeName: InputInvokeUnityEvents, Assembly-CSharp
+        m_MethodName: AttackExample
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d8998307-ab2c-44c8-914b-4bf1fbc0dba7
     m_ActionName: PlayerBasic/Attack[/Keyboard/space,/DualSenseGamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 376a7bdf-c1e3-47b6-aee7-045ae538b75b
+    m_ActionName: PlayerBasic/Example[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerBasic
@@ -286,12 +315,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6295661996023227252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b463fa3651f6a4290be31384128ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  speed: 5
+--- !u!114 &8200266430502506949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295661996023227252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25a686f26467ec46ba6c78eb908fa88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 5
 --- !u!1 &7315417550526463009
 GameObject:

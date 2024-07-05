@@ -460,3 +460,41 @@ using UnityEngine.InputSystem;
     }
 
 ```
+
+#### `Invoke C# Event` behavior
+
+- Use `SwitchCurrentActionMap` to switch the action map.
+
+```csharp
+
+    PlayerInput playerInput;
+    InputActionMap playerBasicInputMap;
+    InputAction attackAction;
+    InputAction moveAction;
+
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        playerBasicInputMap = playerInput.actions.FindActionMap("PlayerBasic");
+        attackAction = playerBasicInputMap.FindAction("Attack");
+        moveAction = playerBasicInputMap.FindAction("Move");
+    }
+
+    private void OnEnable()
+    {
+        attackAction.performed += OnAttackPerformed;
+        attackAction.canceled += OnAttackCanceled;
+        playerBasicInputMap.Enable();
+    }
+
+    private void Update()
+    {
+        direction = moveAction.ReadValue<Vector2>();
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = direction * speed;
+    }
+
+```
