@@ -316,3 +316,15 @@ public class EmbeddedActions : MonoBehaviour
     }
 
 ```
+
+### Ground check via 2D Raycast
+
+- Use `Physics2D.Raycast(position, direction, distance, layerMask);` to check the ground.
+
+```csharp
+RaycastHit2D hit = Physics2D.Raycast(leftPoint.position, Vector2.down, rayLength, detectLayer);
+if (hit)
+{
+    Debug.Log("Grounded");
+}
+```

@@ -2873,7 +2873,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1705438542
 MonoBehaviour:
@@ -2905,6 +2905,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
+  rayLength: 0.05
+  leftPoint: {fileID: 1182715573}
+  rightPoint: {fileID: 6358740}
+  detectLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
