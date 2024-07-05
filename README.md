@@ -54,6 +54,8 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 
 ### Workflow 1: Directly Reading Device States
 
+![Workflow 1](screenshots/README_image-14.png)
+
 - https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-Direct.html
 -
 - Include `using UnityEngine.InputSystem;`.
@@ -66,6 +68,8 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 - `Edit -> Project Settings -> Input System Package -> Create Settings Asset` to create an input settings asset.
 
 ### Workflow 2: Using Embedded Actions
+
+![Workflow 2](screenshots/README_image-13.png)
 
 - https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-Embedded.html
 - provides you with the flexibility to modify or add multiple bindings without needing to change your code.
@@ -139,6 +143,8 @@ public class EmbeddedActions : MonoBehaviour
 ```
 
 ### Workflow 3: Using an Actions Asset
+
+![Workflow 3](screenshots/README_image-12.png)
 
 **Theory**
 
@@ -383,3 +389,7 @@ if (hit)
   - Buttons with modifiers will have more priority then buttons without modifiers.
   - Prevent sumultaneous actions like `Shift + W` and `W`.
   - Be careful with this option.
+
+### Workflow 4: Using an Actions Asset and a PlayerInput component
+
+![Workflow 4](screenshots/README_image-11.png)
