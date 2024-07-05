@@ -36,10 +36,6 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 
 - #TODO
 
-## Gogot vs Unity
-
-- (Plus to Unity) Unity has possibility to attach several scripts to the one object.
-
 ## Unity Guidelines from the Course
 
 - Use `OnEnable`, `OnDisable` and `OnDestroy` to enable and disable the input actions.
@@ -198,7 +194,7 @@ public class EmbeddedActions : MonoBehaviour
 
 - `Control Scheme` is useful when you will be implement the reseting of the bindings.
 
-### Workflow 3: Using an Actions Asset Via Inspector Reference
+### Workflow 3.1: Using an Actions Asset Via Inspector Reference
 
 - `[SerializeField] InputActionAsset inputActions;`
 - Drag and drop the `PlayerControls` asset to the `inputActions` field.
@@ -272,7 +268,7 @@ public class EmbeddedActions : MonoBehaviour
 
 ```
 
-### Workflow 3: Using an Actions Asset Via Generated C# Class
+### Workflow 3.2: Using an Actions Asset Via Generated C# Class
 
 - `Project -> Create -> Input Actions` to create an actions asset and named `PlayerControls`.
 - Select the `PlayerControls` asset and click on the `Generate C# Class` button in the inspector.
@@ -324,7 +320,7 @@ public class EmbeddedActions : MonoBehaviour
 
 ```
 
-### Ground check via 2D Raycast
+### Ground check via 2D Ray cast
 
 - Use `Physics2D.Raycast(position, direction, distance, layerMask);` to check the ground.
 
@@ -409,7 +405,7 @@ if (hit)
 - Add `Player Input` component to the player game object.
   - Assign the `Controls` asset to the `Actions` field.
 
-#### `Send Message` behavior
+### Workflow 4.1: `Send Message` behavior
 
 - Create callback methods names mirroring the action names in the `Controls` asset.
   - `OnMove` for the `Move` action.
@@ -428,11 +424,11 @@ using UnityEngine.InputSystem;
 
 ```
 
-#### `Broadcast Message` behavior
+### Workflow 4.2: `Broadcast Message` behavior
 
 - broadcast message will call the passed in function for all the scripts on the game object that have that function and **for all children objects** that also have that function.
 
-#### `Invoke Unity Event` behavior
+### Workflow 4.3: `Invoke Unity Event` behavior
 
 ![Invoke Unity Event](screenshots/README_image-16.png)
 
@@ -461,7 +457,7 @@ using UnityEngine.InputSystem;
 
 ```
 
-#### `Invoke C# Event` behavior
+### Workflow 4.4: `Invoke C# Event` behavior
 
 - Use `SwitchCurrentActionMap` to switch the action map.
 
