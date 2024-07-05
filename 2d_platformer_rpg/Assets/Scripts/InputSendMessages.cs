@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class InputSendMessages : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
     [SerializeField] float speed = 5f;
+    Rigidbody2D rb;
     Vector2 direction;
 
     private void Awake()

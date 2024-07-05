@@ -431,3 +431,32 @@ using UnityEngine.InputSystem;
 #### `Broadcast Message` behavior
 
 - broadcast message will call the passed in function for all the scripts on the game object that have that function and **for all children objects** that also have that function.
+
+#### `Invoke Unity Event` behavior
+
+![Invoke Unity Event](screenshots/README_image-16.png)
+
+- Allow to set object-reciever and method to call.
+- Possible to setup several objects and methods to call.
+- Callbacks signature: `public void MoveExample(InputAction.CallbackContext value)`.
+- All three fazes were called: `Started`, `Performed` and `Canceled`.
+
+```csharp
+
+    public void AttackExample(InputAction.CallbackContext value)
+    {
+        if (value.performed)
+        {
+            Debug.Log("Attack performed");
+        }
+        else if (value.canceled)
+        {
+            Debug.Log("Attack canceled");
+        }
+        else if (value.started)
+        {
+            Debug.Log("Attack started");
+        }
+    }
+
+```
