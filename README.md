@@ -504,3 +504,56 @@ using UnityEngine.InputSystem;
 ![Base Layer Animation](screenshots/README_image-18.png)
 
 ![Idle Blend Tree](screenshots/README_image-17.png)
+
+### Handle UI Input. Menus.
+
+- Create UI Button. It will create also `Canvas` and `Event System`.
+- Open the `Event System` and `Replace with Input System UI Input Module`.
+- `Event System -> Deselect on Background Click` set to `false`.
+- `Inputactions -> Action Type -> Pass Through` means that the input will be passed from all connected devices.
+- Drag and drop `Event System` to the `Player Input -> UI Input Module` field.
+- Use `playerInput.currentActionMap` to get the current action map.
+
+![InputActions Menu Setup](screenshots/README_image-19.png)
+
+```csharp
+
+    private void OnEnable()
+    {
+        menuActivateDeactivateAction.performed += MenuControl;
+
+        uiInputMap.Disable();
+        playerBasicInputMap.Enable();
+        mapSwitcherInputMap.Enable();
+    }
+
+    InputActionMap placeholderInputMap;
+    private void MenuControl(InputAction.CallbackContext context)
+    {
+        Debug.Log("Menu activated/deactivated");
+
+        if (menuObject == null)
+        {
+            Debug.LogError("Menu Canvas is not assigned");
+            return;
+        }
+
+        if (placeholderInputMap == null)
+        {
+            placeholderInputMap = playerInput.currentActionMap;
+        }
+
+        if (menuObject.activeSelf)
+        {
+            menuObject.SetActive(false);
+            playerInput.SwitchCurrentActionMap(placeholderInputMap.name);
+            placeholderInputMap = null;
+        }
+        else
+        {
+            menuObject.SetActive(true);
+            playerInput.SwitchCurrentActionMap(uiInputMap.name);
+        }
+    }
+
+```
