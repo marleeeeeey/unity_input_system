@@ -75,7 +75,7 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 - Use `Add Positive/Negative Bundings` to support only one direction.
 - `Edit -> Project Settings -> Input System Package -> Default Deadzone` to set the deadzone for the gamestick and even make it workable discrete like a keyboard.
 
-```
+```csharp
 using UnityEngine;
 using UnityEngine.InputSystem;
 
