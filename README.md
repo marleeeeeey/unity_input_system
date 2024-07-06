@@ -48,7 +48,6 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 ![Workflow 1](screenshots/README_image-14.png)
 
 - https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-Direct.html
--
 - Include `using UnityEngine.InputSystem;`.
 - Use `Keyboard`, `Gamepad`, `Mouse` or `Touchscreen` classes.
 - Use `Keyboard.current.wKey.isPressed` to check if the key is pressed.
@@ -385,7 +384,8 @@ if (hit)
 
 ![Workflow 4](screenshots/README_image-11.png)
 
-- provides the flexibility of being able to connect any action to any public method on a GameObject’s component without writing code.
+- https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-PlayerInput.html
+- Provides the flexibility of being able to connect any action to any public method on a GameObject’s component without writing code.
 
 **Practice**
 
