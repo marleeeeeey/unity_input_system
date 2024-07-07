@@ -1,5 +1,13 @@
 # Unity Learning - Input System
 
+## Summary in one diagram
+
+![Unity Input System workflows](screenshots/README_image-20.png)
+
+My choise is to use the `Workflow 4: Using an Actions Asset and a PlayerInput component` with `Invoke Unity Event behavior`.
+- It separates the input actions from the GameObjects(scripts).
+- You do not need to attach acrions by name in the code.
+
 ## Course Information
 
 ### Main Course Information
@@ -227,8 +235,8 @@ public class EmbeddedActions : MonoBehaviour
 
 ```
 
-- Use `moveAction.ReadValue<float>();` to read one demensional value.
-- Use `moveAction.ReadValue<Vector2>();` to read two demensional value.
+- Use `moveAction.ReadValue<float>();` to read one dimensional value.
+- Use `moveAction.ReadValue<Vector2>();` to read two dimensional value.
 - Use `context.ReadValueAsButton();` to read the value as a button (bool) in callbacks.
 
 ```csharp
@@ -400,7 +408,7 @@ if (hit)
 - Add `Player Input` component to the player game object.
   - Assign the `Controls` asset to the `Actions` field.
 
-### Workflow 4.1: `Send Message` behavior
+### Workflow 4.1: Send Message behavior
 
 - Create callback methods names mirroring the action names in the `Controls` asset.
   - `OnMove` for the `Move` action.
@@ -419,11 +427,11 @@ using UnityEngine.InputSystem;
 
 ```
 
-### Workflow 4.2: `Broadcast Message` behavior
+### Workflow 4.2: Broadcast Message behavior
 
 - broadcast message will call the passed in function for all the scripts on the game object that have that function and **for all children objects** that also have that function.
 
-### Workflow 4.3: `Invoke Unity Event` behavior
+### Workflow 4.3: Invoke Unity Event behavior
 
 ![Invoke Unity Event](screenshots/README_image-16.png)
 
@@ -452,7 +460,7 @@ using UnityEngine.InputSystem;
 
 ```
 
-### Workflow 4.4: `Invoke C# Event` behavior
+### Workflow 4.4: Invoke C# Event behavior
 
 - Use `SwitchCurrentActionMap` to switch the action map.
 
