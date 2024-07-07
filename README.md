@@ -4,7 +4,11 @@
 
 ![Unity Input System workflows](screenshots/README_image-20.png)
 
-My choise is to use the `Workflow 4: Using an Actions Asset and a PlayerInput component` with `Invoke Unity Event behavior`.
+My choise is to use
+- `Workflow 4: Using an Actions Asset and a PlayerInput component`
+- with `Invoke Unity Event behavior`.
+
+Because:
 - It separates the input actions from the GameObjects(scripts).
 - You do not need to attach acrions by name in the code.
 
