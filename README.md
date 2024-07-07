@@ -1,16 +1,46 @@
 # Unity Learning - Input System
 
+- [Summary in one diagram](#summary-in-one-diagram)
+- [Course Information](#course-information)
+  - [Main Course Information](#main-course-information)
+  - [What we will learn in this course](#what-we-will-learn-in-this-course)
+- [My goals](#my-goals)
+- [Tasks](#tasks)
+  - [TODO list](#todo-list)
+- [Unity Guidelines from the Course](#unity-guidelines-from-the-course)
+- [Unity Recipes from the Course](#unity-recipes-from-the-course)
+  - [Import the Input System](#import-the-input-system)
+  - [Workflow 1: Directly Reading Device States](#workflow-1-directly-reading-device-states)
+  - [Workflow 2: Using Embedded Actions](#workflow-2-using-embedded-actions)
+  - [Workflow 3: Using an Actions Asset](#workflow-3-using-an-actions-asset)
+  - [Workflow 3.1: Using an Actions Asset Via Inspector Reference](#workflow-31-using-an-actions-asset-via-inspector-reference)
+  - [Workflow 3.2: Using an Actions Asset Via Generated C# Class](#workflow-32-using-an-actions-asset-via-generated-c-class)
+  - [Ground check via 2D Ray cast](#ground-check-via-2d-ray-cast)
+  - [Basic Animations](#basic-animations)
+  - [Blend Tree and Jump Animation](#blend-tree-and-jump-animation)
+  - [Call method at the end of the animation](#call-method-at-the-end-of-the-animation)
+  - [Interactions and Processors](#interactions-and-processors)
+  - [Started vs Performed](#started-vs-performed)
+  - [Actions with Modifiers](#actions-with-modifiers)
+  - [Workflow 4: Using an Actions Asset and a PlayerInput component](#workflow-4-using-an-actions-asset-and-a-playerinput-component)
+  - [Workflow 4.1: Send Message behavior](#workflow-41-send-message-behavior)
+  - [Workflow 4.2: Broadcast Message behavior](#workflow-42-broadcast-message-behavior)
+  - [Workflow 4.3: Invoke Unity Event behavior](#workflow-43-invoke-unity-event-behavior)
+  - [Workflow 4.4: Invoke C# Event behavior](#workflow-44-invoke-c-event-behavior)
+  - [Move animation](#move-animation)
+  - [Handle UI Input. Menus.](#handle-ui-input-menus)
+
 ## Summary in one diagram
 
 ![Unity Input System workflows](screenshots/README_image-20.png)
 
-My choise is to use
+My choice is to use
 - `Workflow 4: Using an Actions Asset and a PlayerInput component`
 - with `Invoke Unity Event behavior`.
 
 Because:
 - It separates the input actions from the GameObjects(scripts).
-- You do not need to attach acrions by name in the code.
+- You do not need to attach actions by name in the code.
 
 ## Course Information
 
@@ -75,7 +105,7 @@ https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflows.htm
 
 - https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/Workflow-Embedded.html
 - provides you with the flexibility to modify or add multiple bindings without needing to change your code.
-  - `CallbackContext.started` - is called when the action is starte - when the button is pressed.
+  - `CallbackContext.started` - is called when the action is started - when the button is pressed.
   - `CallbackContext.performed` - is called when the action is performed - all `interactions` are completed.
   - `CallbackContext.canceled` - is called when the action is canceled.
 - To read `Vector2` values
@@ -439,7 +469,7 @@ using UnityEngine.InputSystem;
 
 ![Invoke Unity Event](screenshots/README_image-16.png)
 
-- Allow to set object-reciever and method to call.
+- Allow to set object-receiver and method to call.
 - Possible to setup several objects and methods to call.
 - Callbacks signature: `public void MoveExample(InputAction.CallbackContext value)`.
 - All three fazes were called: `Started`, `Performed` and `Canceled`.
